@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
 class Bike
-  def working?; end
+  def working?
+    true
+  end
 end
