@@ -9,5 +9,9 @@ describe DockingStation do
     it 'returns an instance of a Bike' do
       expect(subject.release_bike).to be_an_instance_of(Bike)
     end
+
+    it 'returns a working bike' do
+      expect(subject.release_bike).to be_working
+    end
   end
 end
