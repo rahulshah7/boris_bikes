@@ -24,6 +24,7 @@
 	// Add the IDs of extensions you want installed when the container is created in the array below.
 	"extensions": [
 		"rebornix.Ruby",
-		"castwide.solargraph"
+		"castwide.solargraph",
+		"formulahendry.code-runner"
 	]
 }
