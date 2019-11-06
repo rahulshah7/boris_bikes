@@ -7,16 +7,19 @@ describe DockingStation do
 
   describe '#release_bike' do
     it { expect(subject).to respond_to(:release_bike) }
-    it 'returns an instance of a Bike if one is available' do
-      subject.dock_bike(bike)
-      expect(subject.release_bike).to be_an_instance_of(Bike)
-    end
 
-    let(:bike) { subject.release_bike }
-    it 'returns a working bike' do
-      expect(bike).to be_working
+    context 'When a bike is available' do
+      it 'returns an instance of a Bike' do
+        subject.dock_bike(bike)
+        expect(subject.release_bike).to be_an_instance_of(Bike)
+      end
+
+      it 'returns a working bike' do
+        subject.dock_bike(bike)
+        bike = subject.release_bike
+        expect(bike).to be_working
+      end
     end
-  end
 
     context 'When no bikes are available' do
       subject { described_class.new }
