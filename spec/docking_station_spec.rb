@@ -22,7 +22,6 @@ describe DockingStation do
     end
 
     context 'When no bikes are available' do
-      subject { described_class.new }
       it 'raises an error: "No bikes available."' do
         expect { subject.release_bike }.to raise_error(RuntimeError, 'No bikes available.')
       end
