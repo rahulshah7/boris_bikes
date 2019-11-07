@@ -34,6 +34,13 @@ describe DockingStation do
     it 'docks a bike and returns it' do
       expect(subject.dock_bike(bike)).to be(bike)
     end
+
+    context 'When a bike has already been docked' do
+      it 'raises an error: "Bike has already been docked."' do
+        subject.dock_bike(bike)
+        expect { subject.dock_bike(bike) }.to raise_error(RuntimeError, 'Bike has already been docked.')
+      end
+    end
   end
 
   describe '#bike' do
